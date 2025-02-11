@@ -11,3 +11,4 @@ pypdf2
 langchain-chroma
 langchain_text_splitters
 numpy==1.26.0
+faiss-cpu
