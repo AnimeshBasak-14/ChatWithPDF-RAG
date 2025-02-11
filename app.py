@@ -13,11 +13,15 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
-os.environ['HF_TOKEN'] = os.getenv("HF_TOKEN")
+# # Load environment variables
+# load_dotenv()
+# os.environ['HF_TOKEN'] = os.getenv("HF_TOKEN")
+
+hf_token = st.secrets["HUGGINGFACE_TOKEN"]["token"]
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = hf_token
+
 
 # Initialize Embeddings
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
