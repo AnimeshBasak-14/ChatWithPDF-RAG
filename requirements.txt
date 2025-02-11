@@ -1,0 +1,13 @@
+langchain-openai
+langchain
+langchain_community
+langchain_core
+streamlit
+chromadb
+langchain-huggingface
+langchain-groq
+python-dotenv
+pypdf2
+langchain-chroma
+langchain_text_splitters
+numpy==1.26.0
