@@ -31,15 +31,19 @@ st.title("Conversational RAG With PDF Uploads and Chat History")
 st.write("Upload PDFs and chat with their content")
 
 # Input the Groq API Key
-api_key = st.text_input("Enter your Groq API key:", type="password")
+# api_key = st.text_input("Enter your Groq API key:", type="password")
+
+groq_api_key = st.secrets["GROQ_API_KEY"]["key"]
+os.environ["GROQ_API_TOKEN"] = groq_api_key
+
 
 # Ensure API key is provided
-if not api_key:
+if not groq_api_key:
     st.warning("Please enter the Groq API Key")
     st.stop()
 
 # Initialize LLM
-llm = ChatGroq(groq_api_key=api_key, model_name="Gemma2-9b-It")
+llm = ChatGroq(groq_api_key=groq_api_key, model_name="Gemma2-9b-It")
 
 # Chat interface
 session_id = st.text_input("Session ID", value="default_session")
