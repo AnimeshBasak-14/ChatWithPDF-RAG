@@ -8,6 +8,7 @@ langchain-huggingface
 langchain-groq
 python-dotenv
 pypdf2
+pypdf
 pymupdf
 langchain-chroma
 langchain_text_splitters
